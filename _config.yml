@@ -23,8 +23,8 @@ email: issingliang@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hey! I'm a data scientist who loves diving into music and design in my free time.
   Here I share my projects, experiences and creative explorations.
-baseurl: "/home" # the subpath of your site, e.g. /blog
-url: "https://yuxinlg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # root — required for yuxinlg.github.io user site
+url: "https://yuxinlg.github.io"
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -32,7 +32,6 @@ github_username:  jekyll
 # theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-postcss-v2
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
