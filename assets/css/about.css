@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
+}
+
+.navbar ul { list-style: none; margin: 0; padding: 0; }
+.navbar li { margin-bottom: 1rem; }
+.navbar a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.2s;
+}
+.navbar a:hover { color: #E87A90; }
+
+.about-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 2.5rem 3rem 5rem 10rem;
+  box-sizing: border-box;
+}
+
+/* ── English block ── */
+.lang-en p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.9;
+  margin-bottom: 1.4rem;
+  color: #2c2c2c;
+}
+.lang-en .about-greeting {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #2c2c2c;
+  margin-bottom: 1.8rem;
+}
+.lang-en .about-sign {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-top: 2rem;
+  text-align: right;
+  display: block;
+}
+
+/* ── Chinese block — vertical right-to-left, fixed to right side ── */
+.lang-zh {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  flex-direction: row;         /* columns flow right → left */
+  gap: 2rem;
+  height: 80vh;
+  overflow: visible;
+  /* Align with English text start, flush to right */
+  position: fixed;
+  right: 3rem;
+  top: 2.5rem;
+  z-index: 5;
+}
+
+.lang-zh p {
+  font-family: 'HuiWenMingChao', 'Songti SC', 'SimSun', serif;
+  font-size: 1.2rem;
+  line-height: 2.1;
+  margin-bottom: 0;
+  color: #2c2c2c;
+}
+
+.lang-zh .about-greeting {
+  font-family: 'HuiWenMingChao', 'Songti SC', 'SimSun', serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  color: #2c2c2c;
+  margin-bottom: 0;
+}
+
+/* Switcher sits as the first flex item → rightmost column in RTL */
+.lang-zh .zh-switcher {
+  writing-mode: horizontal-tb;
+  align-self: flex-start;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.lang-zh .about-sign {
+  font-family: 'HuiWenMingChao', 'Songti SC', 'SimSun', serif;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  margin-top: 0;
+  text-align: start;
+  display: block;
+  align-self: flex-end;  /* physical bottom of the container */
+}
+
+/* ── Links ── */
+.about-container a { color: #5DAC81; text-decoration: none; transition: color 0.2s; }
+.about-container a:hover { color: #E87A90; text-decoration: underline; }
+
+/* ── Language toggle ── */
+.lang-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.2rem;
+  font-family: 'HuiWenMingChao', 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.78rem;
+  color: #4a4a4a;
+  background: transparent;
+  border: 1px solid #4a4a4a;
+  padding: 0.2rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: border-color 0.2s, color 0.2s;
+  position: relative;
+  top: -0.1rem;
+}
+.lang-toggle:hover { color: #E87A90; border-color: #E87A90; }

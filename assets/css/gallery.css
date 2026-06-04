@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap');
+
+/* ── Page ────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 30;
+}
+.navbar ul { list-style: none; margin: 0; padding: 0; }
+.navbar li { margin-bottom: 1rem; }
+.navbar a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+.navbar a:hover { color: #E87A90; }
+
+/* ── Film reel row — horizontal layout ──────────────────────── */
+.film-reel-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;       /* strips fill full row height */
+  gap: 3rem;
+  padding: 3.5rem 3rem 3.5rem 9rem;
+  height: 100vh;              /* locked to viewport */
+  overflow-x: auto;           /* horizontal scroll between strips */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+/* ── Film strip ──────────────────────────────────────────────── */
+.film-strip {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  gap: 2px;
+  border-radius: 3px;
+  overflow: hidden;
+  height: 100%;
+  padding: 0 4px;
+  background: #114A97;
+  /* Semi-transparent border — background bleeds through */
+  border: 1.5px solid #114A97;
+  /* Glowing blue halo */
+  box-shadow:
+    0 0 18px rgba(17,74,151,0.55),
+    0 0 45px rgba(17,74,151,0.35),
+    0 0 90px rgba(17,74,151,0.18),
+    0 8px 40px rgba(0,0,0,0.10);
+}
+
+/* ── Sprocket edges ───────────────────────────────────────────── */
+.sprocket-edge {
+  width: 18px;
+  flex-shrink: 0;
+  background-color: #114A97;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='40'%3E%3Crect width='18' height='40' fill='%23114A97'/%3E%3Crect x='4' y='14' width='10' height='12' rx='2' ry='2' fill='none' stroke='%23FAF8F4' stroke-width='1' opacity='0.45'/%3E%3C/svg%3E");
+  background-size: 18px 40px;
+  background-repeat: repeat-y;
+}
+
+/* ── Frames column ───────────────────────────────────────────── */
+.strip-frames {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;    /* no fill */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.strip-frames::-webkit-scrollbar { display: none; }
+
+/* ── Strip header ────────────────────────────────────────────── */
+.strip-header {
+  padding: 1rem 0.75rem 0.85rem;
+  background: #114A97;
+  border-bottom: 1.5px solid #114A97;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* Subtle frosted bg so text stays legible while scrolling */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.strip-brand {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: #E87A90;
+  text-transform: uppercase;
+}
+.strip-title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.28em;
+  color: #FAF8F4;
+  text-transform: uppercase;
+}
+.strip-meta {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: rgba(250,248,244,0.45);
+  text-transform: uppercase;
+}
+
+/* ── Individual film frame ───────────────────────────────────── */
+.film-frame {
+  width: 240px;
+  /* No fixed aspect-ratio — each photo keeps its natural dimensions */
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #114A97;
+  flex-shrink: 0;
+  cursor: zoom-in;
+  /* Dreamy outer glow */
+  box-shadow:
+    0 0 18px rgba(17, 74, 151, 0.18),
+    0 0 45px rgba(232, 122, 144, 0.10);
+  transition: box-shadow 0.5s ease;
+}
+.film-frame:hover {
+  box-shadow:
+    0 0 28px rgba(17, 74, 151, 0.28),
+    0 0 70px rgba(232, 122, 144, 0.18),
+    0 0 110px rgba(250, 248, 244, 0.08);
+}
+
+/* Portra 400 colour grade — warm, lifted, soft */
+.film-frame img {
+  width: 100%;
+  height: auto;     /* natural ratio preserved */
+  display: block;
+  transition: transform 0.6s ease, filter 0.5s ease;
+  filter:
+    saturate(0.80)
+    brightness(1.07)
+    contrast(0.88)
+    sepia(0.10);
+}
+.film-frame:hover img {
+  transform: scale(1.03);
+  filter:
+    saturate(0.88)
+    brightness(1.10)
+    contrast(0.90)
+    sepia(0.08);
+}
+
+/* ── Images: block drag & right-click save ───────────────── */
+.film-frame img {
+  pointer-events: none;       /* right-click hits the frame div, not the img */
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ── Watermark ───────────────────────────────────────────── */
+.film-frame::before {
+  content: 'Yuxin Liang';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-style: normal;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+}
+
+/* Vignette + centre glow overlay — the dreamy layer */
+.film-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 248, 240, 0.10) 0%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+.film-frame:hover::after {
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 248, 240, 0.16) 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+}
+
+/* Frame number stamp */
+.frame-no {
+  position: absolute;
+  bottom: 5px;
+  right: 7px;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: rgba(250,248,244,0.40);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Strip footer ────────────────────────────────────────────── */
+.strip-footer {
+  padding: 0.7rem 0.75rem;
+  background: #114A97;
+  border-top: 1.5px solid #114A97;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: rgba(250,248,244,0.45);
+  text-align: center;
+  text-transform: uppercase;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* ── Lightbox ────────────────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid #333;
+  box-shadow: 0 0 80px rgba(0,0,0,0.8);
+}

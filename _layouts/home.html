@@ -8,17 +8,26 @@ title: Yuxin Liang
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="icon" href="{{ '/fav.jpg' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
   </head>
   <body>
+    <div class="me-photo">
+      <img src="{{ '/assets/images/me.png' | relative_url }}" alt="Yuxin Liang">
+    </div>
+
     <header>{{ page.title }}</header>
+
 
     <nav class="navbar">
       <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
         <li><a href="{{ '/about' | relative_url }}">About</a></li>
-        <li><a href="{{ '/portfolio' | relative_url }}">Portfolio</a></li>
+        <li><a href="{{ '/resume' | relative_url }}">CV</a></li>
         <li><a href="{{ '/gallery' | relative_url }}">Gallery</a></li>
-        <li><a href="{{ '/resume' | relative_url }}">Resume</a></li>
       </ul>
     </nav>
 
@@ -30,6 +39,6 @@ title: Yuxin Liang
           <li>Location: Philadelphia, PA</li>
         </ul>
       </section>
-    
+
   </body>
 </html>

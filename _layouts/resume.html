@@ -1,0 +1,110 @@
+---
+title: Resume
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="icon" href="{{ '/fav.jpg' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
+  </head>
+  <body>
+    <nav class="navbar" style="position:fixed; top:2rem; left:2rem;">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/about' | relative_url }}">About</a></li>
+        <li><a href="{{ '/resume' | relative_url }}">CV</a></li>
+        <li><a href="{{ '/gallery' | relative_url }}">Gallery</a></li>
+      </ul>
+    </nav>
+
+    <main class="resume-container" style="box-sizing:border-box;">
+
+      <div class="resume-header">
+        <h1 class="resume-name">Elena (Yuxin) Liang</h1>
+        <a class="download-btn" href="{{ '/assets/Resume_YuxinLiang.pdf' | relative_url }}" download>
+          ↓ Download CV
+        </a>
+      </div>
+
+      <!-- Work Experience Section -->
+      <div class="resume-section-grid">
+        <div class="section-title">
+          <h2>Experience</h2>
+        </div>
+        <div class="section-content">
+          {% for job in page.work_experience %}
+            <div class="job-entry">
+              <h3><strong>{{ job.title }}</strong><span class="dash"> – </span><span class="job-company">{{ job.company }}</span></h3>
+              <p class="job-dates">{{ job.dates }}</p>
+              <ul>
+                {% for item in job.description %}
+                  {% capture md_item %}{{ item | markdownify }}{% endcapture %}
+                  <li>{{ md_item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="resume-section-grid">
+        <div class="section-title">
+          <h2>Education</h2>
+        </div>
+        <div class="section-content">
+          {% for item in page.education %}
+            <div class="education-entry">
+              <p><strong>{{ item.degree }}</strong></p>
+              <p class="edu-meta">{{ item.university }} <span class="job-dates">· {{ item.dates }}</span></p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="resume-section-grid">
+        <div class="section-title">
+          <h2>Projects</h2>
+        </div>
+        <div class="section-content">
+          {% for project in page.projects %}
+            <div class="job-entry">
+              <h3><strong>{{ project.title }}</strong><span class="dash"> – </span><span class="job-company">{{ project.tools }}</span></h3>
+              <p class="job-dates">{{ project.dates }}</p>
+              <ul>
+                {% for item in project.description %}
+                  {% capture md_item %}{{ item | markdownify }}{% endcapture %}
+                  <li>{{ md_item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="resume-section-grid">
+        <div class="section-title">
+          <h2>Skills</h2>
+        </div>
+        <div class="section-content skills-list">
+          {% for skill in page.skills %}
+            <div class="skill-row">
+              <span class="skill-category">{{ skill.category }}</span>
+              <span class="skill-items">{{ skill.items }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>

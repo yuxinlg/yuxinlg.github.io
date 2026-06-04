@@ -1,0 +1,29 @@
+work_experience:
+  - title: "Data Scientist"
+    company: "Company A"
+    dates: "2022–Present"
+    description:
+      - "Built machine learning models for business insights"
+      - "Collaborated with cross-functional teams"
+  - title: "Research Assistant"
+    company: "University B"
+    dates: "2020–2022"
+    description:
+      - "Conducted data analysis for academic projects"
+      - "Published 2 peer-reviewed papers"
+
+education:
+  - degree: "M.S. in Data Science"
+    university: "University B"
+    dates: "2020–2022"
+  - degree: "B.S. in Computer Science"
+    university: "University C"
+    dates: "2016–2020"
+
+skills:
+  - "Python"
+  - "R"
+  - "SQL"
+  - "Machine Learning"
+  - "Data Visualization"
+  - "Git" 

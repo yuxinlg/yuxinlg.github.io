@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap');
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-bottom: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #E87A90;
+}
+
+.resume-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 3rem 0 2.5rem 0;
+}
+
+.section-title h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.1;
+  text-align: left;
+  margin-right: 2rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.04em;
+  color: #2c2c2c;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resume-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 2rem 3rem 4rem 10rem;
+}
+
+.job-entry h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+.job-entry h3 strong {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.education-entry p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.job-company {
+  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.job-dates {
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-weight: 400;
+  color: #4a4a4a;
+  margin-top: 0.2rem;
+}
+
+.job-entry ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
+}
+
+.skills-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skills-list li {
+  background-color: rgba(255, 255, 255, 0.45);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  color: #4a4a4a;
+  border: 1px solid rgba(102, 186, 183, 0.3);
+}
+
+.dash {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #E87A90;
+}
+
+/* Resume header with name + download button */
+.resume-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(102, 186, 183, 0.35);
+}
+
+.resume-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.download-btn {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #5DAC81;
+  text-decoration: none;
+  border: 1px solid #5DAC81;
+  padding: 0.35rem 0.9rem;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  background: #5DAC81;
+  color: #fff;
+}
+
+/* Education meta line */
+.edu-meta {
+  margin: 0.15rem 0 0 0;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  color: #4a4a4a;
+}
+
+/* Skills rows (category: items) */
+.skill-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  align-items: baseline;
+}
+
+.skill-category {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  color: #5DAC81;
+  min-width: 110px;
+  font-size: 0.9rem;
+}
+
+.skill-items {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
+  font-size: 1.1rem;
+}

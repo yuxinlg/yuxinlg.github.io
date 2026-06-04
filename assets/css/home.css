@@ -1,20 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap');
+
 body {
-  min-height: 100vh; /* Makes the body at least the height of the viewport */
-  margin: 0; /* Removes default margin */
-  display: flex; /* Enables flexbox layout */
-  align-items: center; /* Vertically centers content */
-  justify-content: center; /* Horizontally centers content */
-  background: linear-gradient(90deg, #b5c99a,#e3dcd2,#a89fac); /* Horizontal gradient background */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
 }
 
 header {
-    font-size: 3rem; 
-    color: #222; /* Dark text color */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-    padding: 1rem 2rem; /* Space inside the header */
-    font-weight: normal; /* Regular weight */
-  }  
+  font-size: 2.5rem;
+  color: #2c2c2c;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
 
 .navbar {
   position: absolute;
@@ -35,15 +41,15 @@ header {
 
 .navbar a {
   text-decoration: none;
-  color: #222;
-  font-size: 1.1rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
   padding: 0.5rem 1.2rem;
-  transition: background 0.2s, color 0.2s;
+  transition: color 0.2s;
 }
 
 .navbar a:hover {
-  color: #e84a5f;
+  color: #E87A90;
 }
 
 .contact {
@@ -58,31 +64,45 @@ header {
 
 .contact ul {
   list-style: none;
-  padding: 0;
+  padding: 1.2rem 2rem;
   margin: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  font-family: 'Courier Prime', 'Courier New', monospace;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
   align-items: flex-start;
-  padding: 1.2rem 2rem;
 }
 
 .contact li {
-  font-size: 1.1rem;
-  color: #222;
+  font-size: 0.95rem;
+  color: #4a4a4a;
 }
 
 .contact a {
-  color: #3a4e6b;
+  color: #5DAC81;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .contact a:hover {
-  color: #e84a5f;
+  color: #E87A90;
   text-decoration: underline;
 }
 
+/* ── Centre photo ────────────────────────────────────────────── */
+.me-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
 
+.me-photo img {
+  height: 72vh;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
