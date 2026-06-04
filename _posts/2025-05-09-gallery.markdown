@@ -19,51 +19,51 @@ permalink: /gallery
       </div>
 
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-1.jpg" alt="China 1" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-1.jpg" alt="China 1" loading="lazy">
         <span class="frame-no">01</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-2.jpg" alt="China 2" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-2.jpg" alt="China 2" loading="lazy">
         <span class="frame-no">02</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-3.jpg" alt="China 3" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-3.jpg" alt="China 3" loading="lazy">
         <span class="frame-no">03</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-4.jpg" alt="China 4" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-4.jpg" alt="China 4" loading="lazy">
         <span class="frame-no">04</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-5.jpg" alt="China 5" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-5.jpg" alt="China 5" loading="lazy">
         <span class="frame-no">05</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-6.jpg" alt="China 6" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-6.jpg" alt="China 6" loading="lazy">
         <span class="frame-no">06</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-7.jpg" alt="China 7" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-7.jpg" alt="China 7" loading="lazy">
         <span class="frame-no">07</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-8.jpg" alt="China 8" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-8.jpg" alt="China 8" loading="lazy">
         <span class="frame-no">08</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-9.jpg" alt="China 9" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-9.jpg" alt="China 9" loading="lazy">
         <span class="frame-no">09</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-10.jpg" alt="China 10" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-10.jpg" alt="China 10" loading="lazy">
         <span class="frame-no">10</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-11.jpg" alt="China 11" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-11.jpg" alt="China 11" loading="lazy">
         <span class="frame-no">11</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/China_35/china35-12.jpg" alt="China 12" loading="lazy">
+        <img src="/assets/images/gallery/China_35/china35-12.jpg" alt="China 12" loading="lazy">
         <span class="frame-no">12</span>
       </div>
 
@@ -89,39 +89,39 @@ permalink: /gallery
       </div>
 
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-1.jpg" alt="Yellowstone 1" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-1.jpg" alt="Yellowstone 1" loading="lazy">
         <span class="frame-no">01</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-2.jpg" alt="Yellowstone 2" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-2.jpg" alt="Yellowstone 2" loading="lazy">
         <span class="frame-no">02</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-3.jpg" alt="Yellowstone 3" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-3.jpg" alt="Yellowstone 3" loading="lazy">
         <span class="frame-no">03</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-4.jpg" alt="Yellowstone 4" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-4.jpg" alt="Yellowstone 4" loading="lazy">
         <span class="frame-no">04</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-5.jpg" alt="Yellowstone 5" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-5.jpg" alt="Yellowstone 5" loading="lazy">
         <span class="frame-no">05</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-6.jpg" alt="Yellowstone 6" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-6.jpg" alt="Yellowstone 6" loading="lazy">
         <span class="frame-no">06</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-7.jpg" alt="Yellowstone 7" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-7.jpg" alt="Yellowstone 7" loading="lazy">
         <span class="frame-no">07</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-8.jpg" alt="Yellowstone 8" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-8.jpg" alt="Yellowstone 8" loading="lazy">
         <span class="frame-no">08</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_120/yellowstone-9.jpg" alt="Yellowstone 9" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_120/yellowstone-9.jpg" alt="Yellowstone 9" loading="lazy">
         <span class="frame-no">09</span>
       </div>
 
@@ -147,51 +147,51 @@ permalink: /gallery
       </div>
 
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-1.jpg" alt="Yellowstone 35mm 1" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-1.jpg" alt="Yellowstone 35mm 1" loading="lazy">
         <span class="frame-no">01</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-2.jpg" alt="Yellowstone 35mm 2" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-2.jpg" alt="Yellowstone 35mm 2" loading="lazy">
         <span class="frame-no">02</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-3.jpg" alt="Yellowstone 35mm 3" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-3.jpg" alt="Yellowstone 35mm 3" loading="lazy">
         <span class="frame-no">03</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-4.jpg" alt="Yellowstone 35mm 4" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-4.jpg" alt="Yellowstone 35mm 4" loading="lazy">
         <span class="frame-no">04</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-5.jpg" alt="Yellowstone 35mm 5" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-5.jpg" alt="Yellowstone 35mm 5" loading="lazy">
         <span class="frame-no">05</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-6.jpg" alt="Yellowstone 35mm 6" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-6.jpg" alt="Yellowstone 35mm 6" loading="lazy">
         <span class="frame-no">06</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-7.jpg" alt="Yellowstone 35mm 7" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-7.jpg" alt="Yellowstone 35mm 7" loading="lazy">
         <span class="frame-no">07</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-8.jpg" alt="Yellowstone 35mm 8" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-8.jpg" alt="Yellowstone 35mm 8" loading="lazy">
         <span class="frame-no">08</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-9.jpg" alt="Yellowstone 35mm 9" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-9.jpg" alt="Yellowstone 35mm 9" loading="lazy">
         <span class="frame-no">09</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-10.jpg" alt="Yellowstone 35mm 10" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-10.jpg" alt="Yellowstone 35mm 10" loading="lazy">
         <span class="frame-no">10</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-11.jpg" alt="Yellowstone 35mm 11" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-11.jpg" alt="Yellowstone 35mm 11" loading="lazy">
         <span class="frame-no">11</span>
       </div>
       <div class="film-frame">
-        <img src="/home/assets/images/gallery/yellowstone_35/yellowstone35-12.jpg" alt="Yellowstone 35mm 12" loading="lazy">
+        <img src="/assets/images/gallery/yellowstone_35/yellowstone35-12.jpg" alt="Yellowstone 35mm 12" loading="lazy">
         <span class="frame-no">12</span>
       </div>
 
