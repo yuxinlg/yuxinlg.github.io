@@ -14,36 +14,95 @@
 
 /* Mobile: ≤768px */
 @media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  /* Home */
-  header {
-    font-size: 1.8rem;
-    padding: 1rem;
-  }
-
+  /* ── Nav: fixed at top, horizontal, across all pages ── */
   .navbar {
-    position: static;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin: 0;
+    background: rgba(250, 248, 244, 0.95);
+    backdrop-filter: blur(4px);
+    z-index: 100 !important;
+    box-sizing: border-box;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
   }
 
   .navbar li {
-    margin-bottom: 0.6rem;
-    display: inline-block;
-    margin-right: 0.5rem;
+    margin-bottom: 0;
+    display: inline;
+    margin-right: 0;
   }
 
-  .contact {
-    position: static;
-    padding: 1rem;
+  /* ── Home page ── */
+  body {
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
   }
 
-  /* Resume */
+  /* photo: pull out of absolute positioning, appears first in flow */
+  .me-photo {
+    position: static;
+    transform: none;
+    margin-top: 3rem; /* clear fixed navbar */
+    width: 100%;
+    text-align: center;
+  }
+
+  .me-photo img {
+    height: 55vh;
+    width: auto;
+  }
+
+  header {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* contact: pull out of fixed positioning, appears below photo */
+  .contact {
+    position: static;
+    padding: 0.5rem 1rem 2rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ── About page ── */
+  .about-container {
+    padding: 4rem 1.5rem 3rem 1.5rem;
+  }
+
+  /* Chinese vertical text: reflow horizontally on mobile */
+  .lang-zh {
+    position: static !important;
+    writing-mode: horizontal-tb !important;
+    height: auto;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .lang-zh p,
+  .lang-zh .about-greeting,
+  .lang-zh .about-sign {
+    writing-mode: horizontal-tb;
+  }
+
+  /* ── CV page ── */
+  .resume-container {
+    padding: 4rem 1.5rem 3rem 1.5rem;
+  }
+
   .resume-section-grid {
     grid-template-columns: 1fr;
     gap: 0.5rem;
@@ -56,21 +115,8 @@
     margin-bottom: 0.5rem;
   }
 
-  .resume-container {
-    padding: 1rem;
-  }
-
-  /* Gallery */
+  /* ── Gallery ── */
   .gallery-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* About */
-  .about-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .page-header {
-    font-size: 1.8rem;
   }
 }

@@ -10,6 +10,12 @@ body {
   color: #2c2c2c;
 }
 
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+}
+
 .navbar ul {
   list-style: none;
   margin: 0;
