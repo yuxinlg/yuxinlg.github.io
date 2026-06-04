@@ -130,4 +130,9 @@
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
+  /* skill category labels: switch to pink for contrast on mobile */
+  .skill-category {
+    color: #E87A90;
+  }
 }
