@@ -1,5 +1,10 @@
 /* Responsive Design — shared across all pages */
 
+/* Navbar always above sticky/scrolling content on all screen sizes */
+.navbar {
+  z-index: 200;
+}
+
 /* Tablet: ≤1024px */
 @media (max-width: 1024px) {
   .gallery-grid {
@@ -10,22 +15,27 @@
     grid-template-columns: 1fr 2fr;
     gap: 1.5rem;
   }
+
+  /* ── Projects page ── */
+  .project-row {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 /* Mobile: ≤768px */
 @media (max-width: 768px) {
 
-  /* ── Nav: fixed at top, centered, no background ── */
+  /* ── Nav: fixed at top, centered, site gradient bg ── */
   .navbar {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0;
     width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 1rem 0.5rem;
     margin: 0;
-    background: none;
-    z-index: 100 !important;
+    background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+    z-index: 200 !important;
     box-sizing: border-box;
   }
 
@@ -51,6 +61,7 @@
     min-height: 100vh;
     padding-top: 2.5rem;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   /* photo: centered in remaining space */
@@ -90,7 +101,7 @@
 
   /* ── About page ── */
   .about-container {
-    padding: 4rem 1.5rem 3rem 1.5rem;
+    padding: 5.5rem 1.5rem 3rem 1.5rem;
   }
 
   /* Chinese vertical text: reflow horizontally on mobile */
@@ -111,7 +122,7 @@
 
   /* ── CV page ── */
   .resume-container {
-    padding: 4rem 1.5rem 3rem 1.5rem;
+    padding: 5.5rem 1.5rem 3rem 1.5rem;
   }
 
   .resume-section-grid {
@@ -134,5 +145,36 @@
   /* skill category labels: switch to pink for contrast on mobile */
   .skill-category {
     color: #E87A90;
+  }
+
+  /* ── Projects page ── */
+  .projects-container {
+    padding: 5.5rem 1.5rem 3rem 1.5rem;
+    overflow-x: hidden;
+  }
+  .project-toc { display: none; }
+
+  .project-meta {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .project-name {
+    position: static;
+    padding-right: 0;
+  }
+
+  .project-name h2 {
+    font-size: 1.45rem;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

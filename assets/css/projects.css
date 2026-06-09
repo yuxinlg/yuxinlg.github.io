@@ -1,0 +1,451 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(90deg, #5DAC81, #FAF8F4, #E87A90);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #2c2c2c;
+}
+
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 20;
+}
+.navbar ul { list-style: none; margin: 0; padding: 0; }
+.navbar li { margin-bottom: 1rem; }
+.navbar a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  padding: 0.5rem 1.2rem;
+  transition: color 0.2s;
+}
+.navbar a:hover { color: #E87A90; }
+
+/* ── Page container — mirrors resume-container ── */
+.projects-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 2rem 3rem 5rem 10rem;
+  box-sizing: border-box;
+}
+
+/* ── Page header — mirrors resume-header ── */
+.projects-header {
+  display: flex;
+  align-items: baseline;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(102, 186, 183, 0.35);
+}
+
+.projects-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+/* ── Per-project row — mirrors resume-section-grid ── */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 2rem;
+  align-items: start;
+  margin: 3rem 0 2.5rem 0;
+  border-top: 1px solid rgba(93, 172, 129, 0.35);
+  padding-top: 2.5rem;
+}
+
+/* ── Left column: sticky project name ── */
+.projects-header + .project-row {
+  border-top: none;
+}
+
+.project-name {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  padding-left: 0.6rem;
+  padding-right: calc(1rem - 0.6rem);
+  border-left: 2px solid rgba(114, 137, 166, 0.35);
+  transition: border-color 0.25s;
+}
+.project-name.active {
+  border-left-color: #E87A90;
+}
+
+/* ── Project TOC (fixed right, appears on scroll) ── */
+.project-toc {
+  position: fixed;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.project-toc.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.project-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* vertical connecting line */
+.project-toc ul::before {
+  content: '';
+  position: absolute;
+  left: 0.3rem;
+  top: 0.45rem;
+  bottom: 0.45rem;
+  width: 1px;
+  background: rgba(114, 137, 166, 0.3);
+}
+
+.project-toc li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.45rem 0;
+  cursor: pointer;
+}
+
+.toc-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(93, 172, 129, 0.6);
+  background: transparent;
+  margin-top: 0.22rem;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.toc-label {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: rgba(93, 172, 129, 0.8);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  transition: color 0.2s;
+  max-width: 9rem;
+}
+
+.project-toc li.active .toc-dot {
+  background: #7289A6;
+  border-color: #7289A6;
+}
+.project-toc li.active .toc-label {
+  color: #7289A6;
+}
+
+.project-name h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  color: #7289A6;
+  margin: 0 0 0.6rem 0;
+}
+
+.project-name.active {
+  border-left: 2px solid rgba(114, 137, 166, 0.4);
+  padding-left: 0.6rem;
+  padding-right: calc(1rem - 0.6rem);
+}
+
+/* ── Status badge ── */
+.status-badge {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.6rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+.badge-preparation {
+  color: #E87A90;
+  border: 1px solid #E87A90;
+  background: transparent;
+}
+.badge-active {
+  color: #E87A90;
+  border: 1px solid #E87A90;
+  background: transparent;
+}
+
+/* ── Right column: project content ── */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-meta {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: #4a4a4a;
+  margin: 0 0 1.2rem 0;
+}
+
+.project-description {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #2c2c2c;
+  margin: 0 0 1.8rem 0;
+}
+
+/* ── Footer: tags + links ── */
+.project-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #4a4a4a;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(93, 172, 129, 0.3);
+  padding: 0.25rem 0.7rem;
+  border-radius: 3px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.link-btn {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 0.35rem 0.9rem;
+  border-radius: 3px;
+  border: 1px solid;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+.link-live {
+  color: #5DAC81;
+  border-color: #5DAC81;
+  cursor: pointer;
+}
+.link-live:hover {
+  background: #5DAC81;
+  color: #fff;
+}
+.link-disabled {
+  color: #aaa;
+  border-color: #ccc;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Design/Live comparison ── */
+.project-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0.2rem 0 1.6rem 0;
+}
+
+.comparison-fig {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stack the two live screenshots with a small gap */
+.comparison-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.comparison-placeholder {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(93, 172, 129, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: box-shadow 0.2s;
+}
+.comparison-placeholder:hover {
+  box-shadow: 0 4px 20px rgba(44, 44, 44, 0.12);
+}
+
+.comparison-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* shown when image file is missing */
+.comparison-placeholder.missing {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+.comparison-placeholder.missing::after {
+  content: attr(data-src);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+  padding: 1rem;
+  text-align: center;
+  word-break: break-all;
+}
+.comparison-placeholder.missing img {
+  display: none;
+}
+
+.comparison-fig figcaption {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0.45rem;
+}
+
+/* ── Lightbox (for comparison images) ── */
+.projects-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.projects-lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.projects-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 4px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+}
+
+/* ── PDF viewer ── */
+.pdf-viewer {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.pdf-canvas-wrapper {
+  position: relative;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(93, 172, 129, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(44, 44, 44, 0.08);
+}
+
+.pdf-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pdf-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  background: rgba(250, 248, 244, 0.6);
+  min-height: 200px;
+}
+.pdf-loading.hidden { display: none; }
+
+.pdf-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: 0.9rem;
+}
+
+.pdf-btn {
+  background: rgba(250, 248, 244, 0.85);
+  border: 1px solid rgba(93, 172, 129, 0.4);
+  color: #4a4a4a;
+  font-size: 1.1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+.pdf-btn:hover:not(:disabled) {
+  background: #5DAC81;
+  color: #fff;
+  border-color: #5DAC81;
+}
+.pdf-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pdf-counter {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: #4a4a4a;
+  letter-spacing: 0.08em;
+  min-width: 3.5rem;
+  text-align: center;
+}

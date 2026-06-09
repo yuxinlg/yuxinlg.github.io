@@ -1,28 +1,21 @@
 ---
-title: Yuxin Liang
+title: Projects
 ---
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Yuxin Liang — Data Scientist, University of Pennsylvania</title>
+    <title>Projects — Yuxin Liang</title>
     {% include seo.html %}
     <link rel="icon" href="{{ '/fav.jpg' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/home.css?v=2' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/projects.css?v=1' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/responsive.css?v=2' | relative_url }}">
   </head>
   <body>
-    <div class="me-photo">
-      <img src="{{ '/assets/images/me.png' | relative_url }}" alt="Yuxin Liang">
-    </div>
-
-    <header>{{ page.title }}</header>
-
-
     <nav class="navbar">
       <ul>
         <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -33,14 +26,13 @@ title: Yuxin Liang
       </ul>
     </nav>
 
-    <section class="contact">
-        <ul>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/yuxinliang/" target="_blank">Yuxin Liang</a></li>
-          <li>Email: <a href="mailto:issingliang@gmail.com">issingliang@gmail.com</a></li>
-          <li>GitHub: <a href="https://github.com/yuxinlg" target="_blank">yuxinlg</a></li>
-          <li>Location: Philadelphia, PA</li>
-        </ul>
-      </section>
+    <nav class="project-toc" id="project-toc" aria-label="Projects navigation"></nav>
 
+    <main class="projects-container">
+      {{ content }}
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="{{ '/assets/js/pdfviewer.js' | relative_url }}"></script>
   </body>
 </html>
