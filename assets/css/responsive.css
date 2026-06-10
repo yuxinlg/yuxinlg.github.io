@@ -178,3 +178,102 @@
     gap: 1rem;
   }
 }
+
+/* Small mobile: ≤480px */
+@media (max-width: 480px) {
+
+  /* ── Nav: tighter link padding + smaller text ── */
+  .navbar a {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.55rem;
+  }
+
+  /* ── Home page ── */
+  .me-photo img {
+    max-height: 58vh;
+  }
+
+  .contact ul {
+    gap: 0.45rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .contact li {
+    font-size: 0.85rem;
+  }
+
+  /* ── About page ── */
+  .about-container {
+    padding: 5rem 1rem 2.5rem 1rem;
+  }
+
+  .lang-en .about-greeting {
+    font-size: 1.35rem;
+  }
+
+  .lang-en p {
+    font-size: 1.05rem;
+  }
+
+  /* ── CV page ── */
+  .resume-container {
+    padding: 5rem 1rem 2.5rem 1rem;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .resume-name {
+    font-size: 1.6rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.3rem;
+  }
+
+  .skill-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .skill-category {
+    min-width: unset;
+  }
+
+  /* ── Projects page ── */
+  .projects-container {
+    padding: 5rem 1rem 2.5rem 1rem;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .projects-title {
+    font-size: 1.6rem;
+  }
+
+  .project-name h2 {
+    font-size: 1.25rem;
+  }
+
+  /* side-by-side comparison → stacked */
+  .project-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .project-row {
+    padding-top: 1.8rem;
+    gap: 0.6rem;
+  }
+
+  /* ── Gallery ── */
+  .gallery-grid {
+    gap: 0.5rem;
+  }
+}
