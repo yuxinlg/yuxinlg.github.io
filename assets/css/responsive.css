@@ -177,6 +177,10 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  .storymap-embed {
+    height: 70vh;
+  }
 }
 
 /* Small mobile: ≤480px */

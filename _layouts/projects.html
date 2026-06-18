@@ -30,7 +30,98 @@ title: Projects
     <nav class="project-toc" id="project-toc" aria-label="Projects navigation"></nav>
 
     <main class="projects-container">
-      {{ content }}
+      <div class="projects-header">
+        <h1 class="projects-title">Projects</h1>
+      </div>
+
+      {% for project in page.projects %}
+      <div class="project-row" id="{{ project.id }}">
+        <div class="project-name">
+          <h2>{{ project.name }}</h2>
+          <span class="status-badge {{ project.badge_class }}">{{ project.badge }}</span>
+        </div>
+        <div class="project-content">
+          <p class="project-meta">{{ project.meta }}</p>
+          {% for paragraph in project.description %}
+          <p class="project-description">
+            {{ paragraph }}
+          </p>
+          {% endfor %}
+
+          {% if project.pdf %}
+          <div class="pdf-viewer" data-pdf="{{ project.pdf }}">
+            <div class="pdf-canvas-wrapper">
+              <canvas class="pdf-canvas"></canvas>
+              <div class="pdf-loading">Loading slides…</div>
+            </div>
+            <div class="pdf-controls">
+              <button class="pdf-btn pdf-prev" aria-label="Previous slide">&#8592;</button>
+              <span class="pdf-counter"></span>
+              <button class="pdf-btn pdf-next" aria-label="Next slide">&#8594;</button>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if project.comparison %}
+          <div class="project-comparison">
+            <figure class="comparison-fig" data-label="Design">
+              <div class="comparison-placeholder" data-src="{{ project.comparison.design }}">
+                <img src="{{ project.comparison.design }}" alt="{{ project.name }} — Figma design" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+              </div>
+              <figcaption>Design</figcaption>
+            </figure>
+            <figure class="comparison-fig">
+              <div class="comparison-stack">
+                {% for img in project.comparison.live %}
+                <div class="comparison-placeholder" data-src="{{ img }}">
+                  <img src="{{ img }}" alt="{{ project.name }} — live site{% unless forloop.first %} {{ forloop.index }}{% endunless %}" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+                </div>
+                {% endfor %}
+              </div>
+              <figcaption>Live</figcaption>
+            </figure>
+          </div>
+          {% endif %}
+
+          {% if project.image %}
+          <div class="comparison-fig" style="margin: 0.2rem 0 1.6rem 0;">
+            <div class="comparison-placeholder" data-src="{{ project.image }}" style="border-radius:5px;">
+              <img src="{{ project.image }}" alt="{{ project.name }} — live site" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+            </div>
+          </div>
+          {% endif %}
+
+          {% if project.storymap %}
+          <p class="storymap-link">
+            <a href="{{ project.storymap }}" target="_blank" rel="noopener">View the original ArcGIS StoryMap ↗</a>
+          </p>
+          <div class="storymap-embed">
+            <iframe src="{{ project.storymap }}"
+                    title="{{ project.name | strip_html }} — ArcGIS StoryMap"
+                    loading="lazy" allowfullscreen
+                    allow="geolocation; fullscreen"></iframe>
+          </div>
+          {% endif %}
+
+          <div class="project-footer">
+            <div class="project-tags">
+              {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <div class="project-links">
+              {% for link in project.links %}
+              {% if link.url %}
+              <a class="link-btn link-live" href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+              {% else %}
+              <span class="link-btn link-disabled">{{ link.label }}</span>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>

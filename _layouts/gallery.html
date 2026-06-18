@@ -27,7 +27,36 @@ title: Gallery
       </ul>
     </nav>
 
-    {{ content }}
+    <div class="film-reel-row">
+      {% for roll in page.rolls %}
+      <div class="film-strip">
+        <div class="sprocket-edge"></div>
+
+        <div class="strip-frames">
+
+          <div class="strip-header">
+            <div class="strip-brand">{{ roll.brand }}</div>
+            <div class="strip-title">{{ roll.title }}</div>
+            <div class="strip-meta">{{ roll.meta }}</div>
+          </div>
+
+          {% for i in (1..roll.count) %}
+          <div class="film-frame">
+            <img src="/assets/images/gallery/{{ roll.folder }}/{{ roll.prefix }}-{{ i }}.jpg" alt="{{ roll.alt }} {{ i }}" loading="lazy">
+            <span class="frame-no">{{ i | prepend: '0' | slice: -2, 2 }}</span>
+          </div>
+          {% endfor %}
+
+          <div class="strip-footer">
+            <span>{{ roll.footer }}</span>
+          </div>
+
+        </div>
+
+        <div class="sprocket-edge"></div>
+      </div>
+      {% endfor %}
+    </div>
 
     <!-- Lightbox -->
     <div class="lightbox-overlay" id="lightbox">
